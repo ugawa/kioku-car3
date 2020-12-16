@@ -3,7 +3,7 @@ input.onGesture(Gesture.ScreenUp, function () {
         INPUT_MODE = 0
         STORED_MOVE = "" + STORED_MOVE + NEXT_MOVE
         radio.sendString("/ADD" + control.deviceName() + STORED_MOVE)
-        basic.showString("" + (STORED_MOVE))
+        basic.showString(STORED_MOVE)
     }
 })
 input.onGesture(Gesture.TiltRight, function () {
@@ -118,6 +118,7 @@ radio.setGroup(9)
 radio.sendString("/GET" + control.deviceName())
 ぼんびっと.まえはやさ(80, 40)
 ぼんびっと.うしろはやさ(80, 40)
+music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
 basic.forever(function () {
     if (INPUT_MODE) {
         basic.showString("")
